@@ -26,8 +26,6 @@ public class InputHandler : MonoBehaviour
 
     public void TouchPosition(InputAction.CallbackContext context)
     {
-
-        Debug.Log("Touch Pos called");
         Vector2 fingerPos = context.ReadValue<Vector2>();
 
         Ray ray = Camera.main.ScreenPointToRay(fingerPos);
