@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class InputHandler : MonoBehaviour
 {
     private Input input;
-    float depth = 10f;
     public GameObject trail;
 
     private void Awake()

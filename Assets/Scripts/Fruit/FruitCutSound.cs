@@ -4,6 +4,11 @@ public class FruitCutSound : MonoBehaviour
 {
     [SerializeField]AudioSource audio1;
     [SerializeField]AudioSource audio2;
+
+    private void Awake()
+    {
+        audio1.playOnAwake = false; audio2.playOnAwake = false;
+    }
     public void CutFruitSound(bool hit)
     {
         if (hit)
