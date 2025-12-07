@@ -6,16 +6,20 @@ public class InputHandler : MonoBehaviour
     private Input input;
     public GameObject trail;
 
+    private bool isDragging = false;
+
     private void Awake()
     {
         input = new Input();
     }
+
     private void OnEnable()
     {
         input.Enable();
 
-        input.Touch.TouchPress.performed += OnTouchPress;
-        input.Touch.TouchPosition.performed += TouchPosition;
+        input.Touch.TouchPress.started += OnTouchDown;
+        input.Touch.TouchPress.canceled += OnTouchUp;
+        input.Touch.TouchPosition.performed += OnTouchMove;
     }
 
     private void OnDisable()
@@ -23,25 +27,36 @@ public class InputHandler : MonoBehaviour
         input.Disable();
     }
 
-    public void TouchPosition(InputAction.CallbackContext context)
+    private void OnTouchDown(InputAction.CallbackContext ctx)
     {
-        Vector2 fingerPos = context.ReadValue<Vector2>();
+        isDragging = true;
 
+        // Reset trail
+        TrailRenderer tr = trail.GetComponent<TrailRenderer>();
+        tr.Clear();
+
+        // Hide trail until first valid move
+        trail.transform.position = new Vector3(0, 0, -100);
+    }
+
+    private void OnTouchUp(InputAction.CallbackContext ctx)
+    {
+        isDragging = false;
+    }
+
+    private void OnTouchMove(InputAction.CallbackContext ctx)
+    {
+        if (!isDragging) return;
+
+        Vector2 fingerPos = ctx.ReadValue<Vector2>();
         Ray ray = Camera.main.ScreenPointToRay(fingerPos);
 
-        if(Physics.Raycast(ray, out RaycastHit hit))
+        if (Physics.Raycast(ray, out RaycastHit hit))
         {
             Vector3 point = hit.point;
-            point.z = -3;
+            point.z = -3; // your depth plane
 
             trail.transform.position = point;
         }
-
     }
-
-    public void OnTouchPress(InputAction.CallbackContext context)
-    {
-
-    }
-
 }

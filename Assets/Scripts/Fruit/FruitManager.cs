@@ -18,10 +18,9 @@ public class FruitManager : MonoBehaviour
         {
             FruitVibration.Vibrate();
             fruitCutSound.CutFruitSound(true);
-            fruitStateEnum.fruitstate = FruitState.Cut;
+            fruitStateEnum.fruitstate = FruitState.Destroyable;
             Debug.Log(fruitStateEnum.ToString());
         }
-        fruitStateEnum.fruitstate = FruitState.Destroyable;
 
     }
 }

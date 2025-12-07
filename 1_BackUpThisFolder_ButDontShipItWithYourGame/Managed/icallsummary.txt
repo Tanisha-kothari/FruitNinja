@@ -308,6 +308,8 @@ UnityEngine.Application::get_streamingAssetsPath_Injected
 UnityEngine.Application::get_platform
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
+UnityEngine.AudioSource::PlayHelper_Injected
+UnityEngine.AudioSource::set_playOnAwake_Injected
 UnityEngine.Awaitable::IsNativeAwaitableCompleted
 UnityEngine.Awaitable::ReleaseNativeAwaitable
 UnityEngine.Behaviour::get_enabled_Injected
@@ -553,6 +555,7 @@ UnityEngine.Font::Internal_CreateFont_Injected
 UnityEngine.FrameTimingManager::GetLatestTimings_Injected
 UnityEngine.FrameTimingManager::CaptureFrameTimings
 UnityEngine.GameObject::GetComponentsInternal_Injected
+UnityEngine.GameObject::CompareTag_Internal_Injected
 UnityEngine.GameObject::get_activeInHierarchy_Injected
 UnityEngine.GameObject::get_activeSelf_Injected
 UnityEngine.GameObject::get_layer_Injected
@@ -900,6 +903,7 @@ UnityEngine.Object::FindObjectFromInstanceID_Injected
 UnityEngine.Object::ForceLoadFromInstanceID_Injected
 UnityEngine.Object::Internal_CloneSingleWithParent_Injected
 UnityEngine.Object::Internal_CloneSingle_Injected
+UnityEngine.Object::Internal_InstantiateSingle_Injected
 UnityEngine.Object::DestroyImmediate_Injected
 UnityEngine.Object::Destroy_Injected
 UnityEngine.Object::DontDestroyOnLoad_Injected
@@ -1319,6 +1323,8 @@ UnityEngine.ResourcesAPIInternal::FindShaderByName_Injected
 UnityEngine.ResourcesAPIInternal::Load_Injected
 UnityEngine.ResourcesAPIInternal::UnloadAsset_Injected
 UnityEngine.ResourcesAPIInternal::FindObjectsOfTypeAll
+UnityEngine.Rigidbody::AddRelativeForce_Injected
+UnityEngine.Rigidbody::set_useGravity_Injected
 UnityEngine.ScalableBufferManager::get_heightScaleFactor
 UnityEngine.ScalableBufferManager::get_widthScaleFactor
 UnityEngine.ScalableBufferManager::ResizeBuffers
@@ -1565,6 +1571,7 @@ UnityEngine.TouchScreenKeyboard::set_hideInput
 UnityEngine.TouchScreenKeyboard::set_text_Injected
 UnityEngine.TouchScreenKeyboard::get_inputFieldAppearance
 UnityEngine.TouchScreenKeyboard::get_status_Injected
+UnityEngine.TrailRenderer::Clear_Injected
 UnityEngine.Transform::IsChildOf_Injected
 UnityEngine.Transform::get_hasChanged_Injected
 UnityEngine.Transform::get_childCount_Injected
