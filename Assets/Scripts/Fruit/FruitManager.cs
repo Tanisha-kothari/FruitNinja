@@ -4,10 +4,12 @@ public class FruitManager : MonoBehaviour
 {
     FruitCutSound fruitCutSound;
     FruitStateEnum fruitStateEnum;
+    CameraShakeForEffect camShakeForEffect;
 
 
     private void Awake()
     {
+        camShakeForEffect = Camera.main.GetComponent<CameraShakeForEffect>();
         fruitStateEnum = GetComponent<FruitStateEnum>();
         Debug.Log(fruitStateEnum.ToString());
         fruitCutSound = GetComponent<FruitCutSound>();
@@ -17,9 +19,11 @@ public class FruitManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             FruitVibration.Vibrate();
+            camShakeForEffect.ShakeTheCamera();
             fruitCutSound.CutFruitSound(true);
             fruitStateEnum.fruitstate = FruitState.Destroyable;
             Debug.Log(fruitStateEnum.ToString());
+
         }
 
     }
