@@ -16,7 +16,7 @@ public class FruitDestroyer : MonoBehaviour
 
             Debug.Log("Fruit State: " + fruitStateEnum.fruitstate);
 
-            if (fruitStateEnum.fruitstate == FruitState.Destroyable || fruitStateEnum.fruitstate == FruitState.Cut)
+            if (fruitStateEnum.fruitstate == FruitState.Uncut || fruitStateEnum.fruitstate == FruitState.Cut)
             {
                 Destroy(other.gameObject);
             }

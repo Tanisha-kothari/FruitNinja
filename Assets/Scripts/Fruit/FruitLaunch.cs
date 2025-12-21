@@ -1,25 +1,32 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class FruitLaunch : MonoBehaviour
 {
     Rigidbody rb;
-    Vector3 thrust = new Vector3(0, 15, 0);
-    int no;
-    private void Awake()
+
+    public float forwardForce = 6f;
+    public float upwardForce = 15f;
+    public float spinForce = 3f;
+
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
-    {
-        transform.Rotate(new Vector3(0, 0, no));
-    }
     void Start()
     {
-        no = Random.Range(2, 4);
-        //rb.AddForce(transform.up * thrust, ForceMode.Impulse);
-        rb.AddRelativeForce(thrust, ForceMode.Impulse);
         rb.useGravity = true;
+
+        float randomForward = Random.Range(4f, 8f);
+        float randomUpward = Random.Range(12f, 18f);
+
+        Vector3 launchDirection =
+            transform.right * randomForward +
+            Vector3.up * randomUpward;
+
+        rb.AddForce(launchDirection, ForceMode.Impulse);
+
+        rb.angularVelocity = Random.insideUnitSphere * spinForce;
     }
 
 }
