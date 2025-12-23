@@ -5,6 +5,7 @@ public class FruitManager : MonoBehaviour
     FruitCutSound fruitCutSound;
     FruitStateEnum fruitStateEnum;
     CameraShakeForEffect camShakeForEffect;
+    FruitSplatterSystem fruitSplatterSystem;
 
 
     private void Awake()
@@ -13,6 +14,7 @@ public class FruitManager : MonoBehaviour
         fruitStateEnum = GetComponent<FruitStateEnum>();
         Debug.Log(fruitStateEnum.ToString());
         fruitCutSound = GetComponent<FruitCutSound>();
+        fruitSplatterSystem = GetComponent<FruitSplatterSystem>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -23,6 +25,8 @@ public class FruitManager : MonoBehaviour
             fruitCutSound.CutFruitSound(true);
             fruitStateEnum.fruitstate = FruitState.Cut;
             Debug.Log(fruitStateEnum.ToString());
+            fruitSplatterSystem.GenerateParticle();
+            FruitCutScore.Instance.AddScore(1);
 
         }
 
