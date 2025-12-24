@@ -5,7 +5,6 @@ public class BombManager : MonoBehaviour
     BombCutSound bombCutSound;
     FruitStateEnum fruitStateEnum;
     CameraShakeForEffect camShakeForEffect;
-    FruitSplatterSystem fruitSplatterSystem;
 
 
     private void Awake()
@@ -14,7 +13,6 @@ public class BombManager : MonoBehaviour
         fruitStateEnum = GetComponent<FruitStateEnum>();
         Debug.Log(fruitStateEnum.ToString());
         bombCutSound = GetComponent<BombCutSound>();
-        fruitSplatterSystem = GetComponent<FruitSplatterSystem>();
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -18,7 +18,7 @@ public class FruitManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && fruitStateEnum.fruitstate != FruitState.Cut)
         {
             FruitVibration.Vibrate();
             camShakeForEffect.ShakeTheCamera();

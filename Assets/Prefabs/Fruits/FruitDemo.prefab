@@ -41,7 +41,7 @@ Transform:
   m_LocalRotation: {x: 0.2692422, y: 0.20529482, z: -0.20352224, w: 0.9186629}
   m_LocalPosition: {x: 1.19168, y: -2.68404, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 35.328, y: 19.147, z: -18.834}
@@ -120,8 +120,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.9557499
+  m_Center: {x: -0.024410846, y: -0.03715914, z: 0.0000000010398147}
 --- !u!54 &5371315852718458238
 Rigidbody:
   m_ObjectHideFlags: 0
