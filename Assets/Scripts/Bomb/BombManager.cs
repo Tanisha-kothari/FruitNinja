@@ -6,14 +6,15 @@ public class BombManager : MonoBehaviour
     FruitStateEnum fruitStateEnum;
     CameraShakeForEffect camShakeForEffect;
 
+    CutsceneManager cutsceneManager;
 
     private void Awake()
     {
         camShakeForEffect = Camera.main.GetComponent<CameraShakeForEffect>();
         fruitStateEnum = GetComponent<FruitStateEnum>();
-        Debug.Log(fruitStateEnum.ToString());
         bombCutSound = GetComponent<BombCutSound>();
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -21,10 +22,7 @@ public class BombManager : MonoBehaviour
             FruitVibration.Vibrate();
             camShakeForEffect.ShakeTheCamera();
             bombCutSound.CutFruitSound(true);
-            fruitStateEnum.fruitstate = FruitState.Cut;
-            //CutScene????
-
+            CutsceneManager.Instance.PlayBombCutscene();
         }
-
     }
 }
