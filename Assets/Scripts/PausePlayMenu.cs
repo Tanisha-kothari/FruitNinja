@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PausePlayMenu : MonoBehaviour
 {
     [SerializeField] GameObject menu;
     [SerializeField] GameTimer gameTimer;
+
+    [SerializeField] string sceneName = "HomePage";
 
     private void Awake()
     {
@@ -22,5 +25,13 @@ public class PausePlayMenu : MonoBehaviour
         menu.SetActive(false);
         Time.timeScale = 1f;
         gameTimer.StartTimer();
+    }
+
+    public void GoHome()
+    {
+        menu.SetActive(false);
+        Time.timeScale = 0f;
+        gameTimer.StopTimer();
+        SceneManager.LoadScene(sceneName);
     }
 }
