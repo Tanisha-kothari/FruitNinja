@@ -18,7 +18,7 @@ public class FruitLaunch : MonoBehaviour
         rb.useGravity = true;
 
         float randomForward = Random.Range(4f, 8f);
-        float randomUpward = Random.Range(12f, 18f);
+        float randomUpward = Random.Range(10f, 15f);
 
         Vector3 launchDirection =
             transform.right * randomForward +
