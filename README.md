@@ -6,6 +6,10 @@ A fast-paced arcade slicing game inspired by the classic *Fruit Ninja* gameplay 
 This project was built as a **game developer portfolio piece**, showcasing clean gameplay systems, modular design, and real-time visual/audio/haptic feedback.
 
 ---
+## Screenshots/Videos
+
+
+---
 
 ## Project Goals
 
