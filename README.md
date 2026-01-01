@@ -160,7 +160,7 @@ This centralized handling keeps logic readable and expandable.
 
 ---
 
-## 💥 Bomb System
+## Bomb System
 
 Bombs intentionally reuse several fruit systems:
 
