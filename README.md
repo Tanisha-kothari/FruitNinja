@@ -1,4 +1,4 @@
-````markdown
+
 # Fruit Ninja – Unity Arcade Slicing Game
 
 A fast-paced arcade slicing game inspired by the classic *Fruit Ninja* gameplay loop, developed in Unity with a strong focus on **game feel**, **reusable component-based architecture**, and **layered player feedback**.
